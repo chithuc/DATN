@@ -6,6 +6,7 @@ import data.Tiki_data.TikiData;
 import io.qameta.allure.*;
 import model.Product;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -24,18 +25,9 @@ public class HomeTests extends TestBase {
     List<Product> products = new ArrayList<>();
 
     private TikiHomePage tikiHomePage;
-    static WebDriver driver;
-
-//    @BeforeTest
-//    public void setUp() {
-//
-//    }
 
     @BeforeTest
     public void initializePage()  {
-        TestBase testBase = new TestBase();
-        testBase.initialize();
-        driver = getDriver();
         tikiHomePage = new TikiHomePage();
     }
 

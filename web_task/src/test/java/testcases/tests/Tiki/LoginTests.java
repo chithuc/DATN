@@ -5,6 +5,7 @@ import core.config.PageFactoryManager;
 import core.constants.Constants;
 import data.Tiki_data.TikiData;
 import io.qameta.allure.*;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import pages.Tiki.TikiHomePage;
 import pages.Tiki.LoginPage;
@@ -16,7 +17,8 @@ import utilities.ReportListener;
 public class LoginTests extends TestBase {
     boolean isLogin = false;
     private TikiHomePage tikiHomePage;
-    @BeforeMethod
+
+    @BeforeTest
     public void initializePage()  {
         tikiHomePage = new TikiHomePage();
     }

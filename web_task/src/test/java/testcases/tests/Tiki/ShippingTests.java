@@ -4,13 +4,9 @@ import base.TestBase;
 import core.config.PageFactoryManager;
 import core.constants.Constants;
 import data.Tiki_data.TikiData;
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import io.qameta.allure.*;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.*;
 import pages.Tiki.LoginPage;
 import pages.Tiki.ShippingPage;
 import pages.Tiki.TikiHomePage;
@@ -24,10 +20,10 @@ import java.util.List;
 public class ShippingTests extends TestBase {
     private ShippingPage shippingPage;
     private TikiHomePage tikiHomePage;
-    @BeforeMethod
+
+    @BeforeTest
     public void initializePage()  {
         tikiHomePage = new TikiHomePage();
-        shippingPage = new ShippingPage();
     }
 
     @Test(description = "Scenario: Add new address successful",groups = {"Shipping"})

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Utils;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -23,7 +24,7 @@ public class PageObjectBase {
     public PageObjectBase() {
         try {
             this.driver = DriverManager.getDriver();
-        } catch (WrongDriverException e) {
+        } catch (Exception e) {
             System.err.println(e.getMessage());
         }
         PageFactory.initElements(driver, this);

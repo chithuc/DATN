@@ -6,6 +6,7 @@ import core.constants.Constants;
 import data.Tiki_data.TikiData;
 import io.qameta.allure.*;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -18,15 +19,10 @@ import utilities.ReportListener;
 @Feature("Item details")
 public class ItemDetailTests extends TestBase {
     private TikiHomePage tikiHomePage;
-    static WebDriver driver;
 
     @BeforeTest
     public void initializePage()  {
         tikiHomePage = new TikiHomePage();
-        TestBase testBase = new TestBase();
-        testBase.initialize();
-        driver = getDriver();
-        driver.get("https://tiki.vn/");
     }
 
     @Test(description = "View item detail successful",groups = {"Item_detail"})

@@ -6,7 +6,7 @@ public class TikiData {
     // user data is valid
     public static final String phoneNumber = "0977817734";
     public static final String passWord = "1234567890a@";
-    public static final String userName = "Chi thuc";
+    public static final String userName = "Phạm Thị Nhung";
     // user data is invalid
     public static final String phoneNumberInvalid = "";
     public static final String passWordInvalid = "";

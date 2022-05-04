@@ -5,7 +5,7 @@ import core.config.PageFactoryManager;
 import core.constants.Constants;
 import data.Tiki_data.TikiData;
 import io.qameta.allure.*;
-import org.testng.Assert;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import pages.Tiki.*;
 import utilities.ReportListener;
@@ -17,7 +17,7 @@ public class CartTests extends TestBase {
     private TikiHomePage tikiHomePage;
     String itemName="";
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeTest
     public void initializePage()  {
         tikiHomePage = new TikiHomePage();
     }
@@ -29,6 +29,7 @@ public class CartTests extends TestBase {
         tikiHomePage.navigate_Tiki_Url(Constants.TIKI_URL)
                 .input_Keyword(TikiData.SEARCH_VALUE)
                 .click_search_button();
+//        itemName=tikiHomePage.getName(1);
         itemName=tikiHomePage.getName(1).split("-")[0];
         tikiHomePage.clickItemOnResultList(1);
         PageFactoryManager.get(ItemDetailPage.class)
@@ -53,7 +54,7 @@ public class CartTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @Description("Verify add new address successfully")
     public void Test_13_Order()  {
-//        tikiHomePage.navigate_Tiki_Url(Constants.TIKI_URL);
+//        tikiHomePage.navigate_Tiki_Url(Constants.TIKI_URL)
 //                .input_Keyword(TikiData.SEARCH_VALUE)
 //                .click_search_button();
 //        itemName=tikiHomePage.getName(1).split("-")[0];
@@ -71,7 +72,6 @@ public class CartTests extends TestBase {
 //        PageFactoryManager.get(CartDetailsPage.class).navigate_Cart_Details_Url()
 //                .chooseAItem(itemName)
 //                .clickOrderButton();
-//        Assert.assertTrue(false);
     }
 
     @AfterMethod(alwaysRun = true)
