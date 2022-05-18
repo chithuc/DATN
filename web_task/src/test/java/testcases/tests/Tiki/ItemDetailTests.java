@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.Tiki.ItemDetailPage;
+import pages.Tiki.LoginPage;
 import pages.Tiki.TikiHomePage;
 import utilities.ReportListener;
 
@@ -23,6 +24,12 @@ public class ItemDetailTests extends TestBase {
     @BeforeTest
     public void initializePage()  {
         tikiHomePage = new TikiHomePage();
+        tikiHomePage.navigate_Tiki_Url(Constants.TIKI_URL).verify_title(Constants.TIKI_TITLE).clickLoginOrSignUpButton();;
+        PageFactoryManager.get(LoginPage.class)
+                .inputPhoneNumber(TikiData.phoneNumber)
+                .clickContinueButton()
+                .inputPassword(TikiData.passWord)
+                .clickLoginButton();
     }
 
     @Test(description = "View item detail successful",groups = {"Item_detail"})

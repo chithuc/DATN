@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
@@ -19,7 +20,7 @@ public class DriverManager {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
-                driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+                driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
                 driver.manage().window().maximize();
                 tdriver.set(driver);
                 getDriver();

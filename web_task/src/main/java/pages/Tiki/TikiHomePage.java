@@ -55,6 +55,7 @@ public class TikiHomePage extends PageObjectBase {
     @Step("Open url")
     public TikiHomePage navigate_Tiki_Url(String url) {
         OpenUrl(url);
+        sleep(2);
         return this;
     }
 
