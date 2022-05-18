@@ -56,6 +56,7 @@ public class ShippingPage extends PageObjectBase {
 
     @Step("click add new address")
     public ShippingPage clickAddNewAddressButton() {
+        scrollTo(ADD_NEW_ADDRESS_BUTTON);
         sleep(5);
         click(ADD_NEW_ADDRESS_BUTTON);
         sleep(2);
@@ -65,7 +66,7 @@ public class ShippingPage extends PageObjectBase {
     @Step("input full name")
     public ShippingPage inputFullName(String fullName) {
         scrollTo(FULL_NAME_TEXT_BOX);
-        click(FULL_NAME_TEXT_BOX);
+//        click(FULL_NAME_TEXT_BOX);
         sendKeys(FULL_NAME_TEXT_BOX,fullName);
         return this;
     }

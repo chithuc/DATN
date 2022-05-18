@@ -24,6 +24,8 @@ public class ShippingTests extends TestBase {
     @BeforeTest
     public void initializePage()  {
         tikiHomePage = new TikiHomePage();
+        shippingPage = new ShippingPage();
+
     }
 
     @Test(description = "Scenario: Add new address successful",groups = {"Shipping"})

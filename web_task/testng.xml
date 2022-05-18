@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite">
+    <test name="Test" thread-count="5">
+        <classes>
+            <class name="testcases.tests.Tiki.HomeTests"></class>
+            <class name="testcases.tests.Tiki.LoginTests"></class>
+            <class name="testcases.tests.Tiki.ItemDetailTests"></class>
+            <class name="testcases.tests.Tiki.CartTests"></class>
+            <class name="testcases.tests.Tiki.ShippingTests"></class>
+        </classes>
+    </test>
+</suite>
